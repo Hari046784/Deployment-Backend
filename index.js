@@ -7,11 +7,15 @@ const express = require("express");
 //Importing the DB
 const db = require("./db/connect");
 
+//Importing the cors
+const cors = require('cors');
+
 //Initializing the express
 const app = express();
 
-// Calling the express.json() method for parsing
+// Calling the express.json() method for parsing and call cors
 app.use(express.json());
+app.use(cors());
 
 // To connect DB
 db();
